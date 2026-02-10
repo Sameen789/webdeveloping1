@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Web Design | Elevate Your Business</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #070B16;
+            --bg-card: #0F1629;
+            --neon-blue: #00D2FF;
+            --neon-purple: #9D50BB;
+            --neon-pink: #F000FF;
+            --text-main: #FFFFFF;
+            --text-dim: #94A3B8;
+            --gradient: linear-gradient(90deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: var(--bg-deep); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Glows */
+        .glow-orb {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--neon-purple);
+            filter: blur(150px);
+            opacity: 0.15;
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(7, 11, 22, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-weight: 800; font-size: 22px; letter-spacing: -1px; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Hero Section */
+        header {
+            padding: 120px 8% 100px;
+            text-align: center;
+            position: relative;
+        }
+        h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 800; line-height: 1.1; margin-bottom: 25px; }
+        .hero-sub { font-size: 20px; color: var(--text-dim); margin-bottom: 45px; max-width: 700px; margin-inline: auto; }
+        
+        /* Glowing Buttons */
+        .btn-whatsapp {
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            color: white;
+            background: var(--gradient);
+            display: inline-block;
+            transition: 0.4s;
+            box-shadow: 0 0 20px rgba(157, 80, 187, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(240, 0, 255, 0.6);
+        }
+
+        /* Services */
+        section { padding: 100px 8%; }
+        .title-area { text-align: center; margin-bottom: 60px; }
+        .title-area h2 { font-size: 36px; margin-bottom: 15px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
+        .card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+        .card:hover {
+            border-color: var(--neon-blue);
+            transform: translateY(-10px);
+            background: rgba(15, 22, 41, 0.8);
+        }
+        .card h3 { color: var(--neon-blue); margin-bottom: 15px; font-size: 22px; }
+
+        /* Pricing Card */
+        .pricing-wrap { display: flex; justify-content: center; }
+        .price-card {
+            background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box, var(--gradient) border-box;
+            border: 2px solid transparent;
+            padding: 60px;
+            border-radius: 32px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        .price-tag { font-size: 48px; font-weight: 800; margin: 20px 0; }
+        .price-card ul { list-style: none; margin: 30px 0; color: var(--text-dim); text-align: left; }
+        .price-card li { margin-bottom: 15px; display: flex; align-items: center; }
+        .price-card li::before { content: '→'; color: var(--neon-pink); margin-right: 12px; font-weight: bold; }
+
+        /* Why Choose Me */
+        .feature-icon { 
+            width: 50px; height: 50px; background: rgba(0, 210, 255, 0.1); 
+            border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: var(--neon-blue);
+        }
+
+        /* CTA Banner */
+        .cta-box {
+            background: var(--gradient);
+            padding: 80px 40px;
+            border-radius: 40px;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        .cta-box h2 { font-size: 42px; margin-bottom: 30px; }
+        .btn-dark { background: var(--bg-deep); color: white; }
+
+        footer { text-align: center; padding: 40px; color: var(--text-dim); border-top: 1px solid rgba(255, 255, 255, 0.05); }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 42px; }
+            section { padding: 60px 5%; }
+            .cta-box h2 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-orb" style="top: -100px; right: -100px;"></div>
+    <div class="glow-orb" style="top: 600px; left: -200px; background: var(--neon-blue);"></div>
+
+    <nav>
+        <div class="logo">NEON.STUDIO</div>
+    </nav>
+
+    <header>
+        <h1>Professional Website <br>Design for Your Business</h1>
+        <p class="hero-sub">Get a modern, mobile-friendly website that converts visitors into customers. Starting from just Rs. 20,000.</p>
+        <a href="https://wa.me/94743737296" class="btn-whatsapp">Contact on WhatsApp</a>
+    </header>
+
+    <section id="services">
+        <div class="title-area">
+            <h2>Our Expertise</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Business Websites</h3>
+                <p>Establishing your professional presence online with trust-driven design.</p>
+            </div>
+            <div class="card">
+                <h3>Landing Pages</h3>
+                <p>Focused layouts designed specifically to drive leads and sales.</p>
+            </div>
+            <div class="card">
+                <h3>Portfolio Websites</h3>
+                <p>Showcasing your work in a creative, interactive digital gallery.</p>
+            </div>
+            <div class="card">
+                <h3>Website Redesign</h3>
+                <p>Modernizing your existing site for better speed and user experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" style="background: rgba(255,255,255,0.02);">
+        <div class="title-area">
+            <h2>Simple Pricing</h2>
+        </div>
+        <div class="pricing-wrap">
+            <div class="price-card">
+                <h3>Starter Website Package</h3>
+                <div class="price-tag">Rs. 20,000</div>
+                <ul>
+                    <li>Modern One-Page Layout</li>
+                    <li>Fully Responsive (Mobile + Desktop)</li>
+                    <li>Fast Delivery (3-5 Days)</li>
+                    <li>WhatsApp Button Integration</li>
+                    <li>Basic SEO Optimization</li>
+                </ul>
+                <a href="https://wa.me/94743737296" class="btn-whatsapp" style="width: 100%; text-align: center;">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="title-area">
+            <h2>Why Choose Me</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h4>Affordable Pricing</h4>
+                <p>Get premium tech studio quality at a fraction of agency costs.</p>
+            </div>
+            <div class="card">
+                <h4>Modern Design</h4>
+                <p>Clean, dark-mode aesthetics that keep your brand ahead of the curve.</p>
+            </div>
+            <div class="card">
+                <h4>Fast Delivery</h4>
+                <p>Launch your business online in record time without compromising quality.</p>
+            </div>
+            <div class="card">
+                <h4>Friendly Support</h4>
+                <p>Direct communication and local support throughout the journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="cta-box">
+            <h2>Let's build your website today</h2>
+            <a href="https://wa.me/94743737296" class="btn-whatsapp btn-dark">Chat on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 NEON.STUDIO | Premium Freelance Web Design Sri Lanka
+    </footer>
+
+</body>
+</html>
